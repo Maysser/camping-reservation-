@@ -54,7 +54,7 @@
     </div>
   </nav>
 
-  <!-- Section principale avec image de fond -->
+  <!-- Section principale  -->
   <section class="relative h-screen bg-cover bg-center" style="background-image: url('assets/image2.jpg')">
   <div class="absolute inset-0 bg-black/10"></div>
   <!-- Contenu centré -->
@@ -117,7 +117,7 @@
               <span class="line-through text-gray-400 text-sm">560€</span>
               <span class="text-green-600 font-bold ml-2">448€</span>
             </div>
-            <a href="#" class="text-green-700 hover:underline text-sm font-medium">Voir l'offre</a>
+            <a href="#" class="text-black-700 hover:underline text-sm font-medium">Voir l'offre</a>
           </div>
         </div>
       </div>
@@ -133,7 +133,7 @@
           <p class="text-sm text-gray-600">Un weekend en chalet avec jacuzzi privé et petit-déjeuner inclus pour 2 personnes.</p>
           <div class="mt-3 flex items-center justify-between">
             <span class="text-green-600 font-bold">199€<span class="text-sm text-gray-500"> /weekend</span></span>
-            <a href="#" class="text-green-700 hover:underline text-sm font-medium">Voir l'offre</a>
+            <a href="#" class="text-black-700 hover:underline text-sm font-medium">Voir l'offre</a>
           </div>
         </div>
       </div>
@@ -149,7 +149,7 @@
           <p class="text-sm text-gray-600">Emplacement tente + 3 activités outdoor au choix (canoë, randonnée, VTT).</p>
           <div class="mt-3 flex items-center justify-between">
             <span class="text-green-600 font-bold">145€<span class="text-sm text-gray-500"> /personne</span></span>
-            <a href="#" class="text-green-700 hover:underline text-sm font-medium">Voir l'offre</a>
+            <a href="#" class="text-black-700 hover:underline text-sm font-medium">Voir l'offre</a>
           </div>
         </div>
       </div>
@@ -179,7 +179,7 @@
           <p class="text-sm text-gray-600">Un coin calme en pleine nature pour planter votre tente et profiter du calme environnant.</p>
           <div class="mt-3 flex items-center justify-between">
             <span class="text-green-600 font-bold">30€<span class="text-sm text-gray-500"> /nuit</span></span>
-            <a href="#" class="text-green-700 hover:underline text-sm font-medium">Voir l'offre</a>
+            <a href="#" class="text-black-700 hover:underline text-sm font-medium">Voir l'offre</a>
           </div>
         </div>
       </div>
@@ -195,7 +195,7 @@
           <p class="text-sm text-gray-600">Emplacement spacieux idéal pour les familles avec enfants, proche des aires de jeux.</p>
           <div class="mt-3 flex items-center justify-between">
             <span class="text-green-600 font-bold">40€<span class="text-sm text-gray-500"> /nuit</span></span>
-            <a href="#" class="text-green-700 hover:underline text-sm font-medium">Voir l'offre</a>
+            <a href="#" class="text-black-700 hover:underline text-sm font-medium">Voir l'offre</a>
           </div>
         </div>
       </div>
@@ -211,7 +211,7 @@
           <p class="text-sm text-gray-600">Pour camping-car, caravane ou tente avec raccordement électrique à disposition.</p>
           <div class="mt-3 flex items-center justify-between">
             <span class="text-green-600 font-bold">45€<span class="text-sm text-gray-500"> /nuit</span></span>
-            <a href="#" class="text-green-700 hover:underline text-sm font-medium">Voir l'offre</a>
+            <a href="#" class="text-black-700 hover:underline text-sm font-medium">Voir l'offre</a>
           </div>
         </div>
       </div>
@@ -244,6 +244,17 @@
           </iframe>
         </div>
       </div>
+    </div>
+  </footer>
+
+  <!-- pied de la page  -->
+  <footer class="bg-white text-center py-4 text-sm text-gray-500 border-t">
+    <p>© 2025 Thedreamerwildandfree. Tous droits réservés.</p>
+    <div class="flex justify-center gap-4 mt-2">
+      <a href="#" class="hover:underline">Conditions d'utilisation</a>
+      <a href="#" class="hover:underline">Confidentialité</a>
+      <a href="#" class="hover:underline">Aide</a>
+      <a href="#contact" class="hover:underline">Contact</a>
     </div>
   </footer>
 
