@@ -162,7 +162,7 @@
   </div>
   <div class="text-right">
     <p class="text-sm text-gray-500">Prix pour 3 nuits</p>
-    <p class="text-lg font-bold text-black">360€</p>
+    <p class="text-lg font-bold text-green-700">360€</p>
     <button onclick="selectHebergement('Chalet Panorama')" class="mt-4 border border-black text-black px-4 py-2 rounded-lg hover:bg-black hover:text-white transition">
       Sélectionner
     </button>
@@ -183,7 +183,7 @@
   </div>
   <div class="text-right">
     <p class="text-sm text-gray-500">Prix pour 3 nuits</p>
-    <p class="text-lg font-bold text-black">270€</p>
+    <p class="text-lg font-bold text-green-700">270€</p>
     <button onclick="selectHebergement('Mobil-home Familial')" class="mt-4 border border-black text-black px-4 py-2 rounded-lg hover:bg-black hover:text-white transition">
       Sélectionner
     </button>
@@ -215,52 +215,80 @@
   <h2 class="text-3xl font-bold mb-6 text-center">Services complémentaires</h2>
   <p class="mb-10 text-gray-600 text-center">Choisissez les options supplémentaires pour rendre votre séjour encore plus agréable.</p>
 
-  <div class="space-y-8 max-w-3xl mx-auto">
-    <!-- Service: Location de vélos -->
-    <div class="bg-white rounded-2xl shadow-lg p-6 flex items-center justify-between">
+
+  <!-- Service: Location de vélos -->
+  <div class="border rounded-lg p-4">
+    <div class="flex items-center justify-between">
       <div>
-        <h3 class="text-xl font-semibold text-gray-800">Location de vélos</h3>
+        <h3 class="font-semibold text-lg">Location de vélos</h3>
         <p class="text-sm text-gray-500">Location de vélos pour adultes, prix par jour</p>
-        <p class="mt-1 text-green-600 font-bold">15€</p>
+        <p class="mt-1 font-bold text-green-700">15€</p>
       </div>
-      <div class="flex items-center space-x-3">
-        <input type="checkbox" id="velo" class="h-5 w-5 text-green-600 accent-green-700" checked>
-        <button class="px-3 py-1 bg-gray-200 rounded-full text-lg font-bold hover:bg-gray-300 transition" onclick="decrease('veloQty')">-</button>
-        <span id="veloQty" class="w-6 text-center">1</span>
-        <button class="px-3 py-1 bg-gray-200 rounded-full text-lg font-bold hover:bg-gray-300 transition" onclick="increase('veloQty')">+</button>
-      </div>
-    </div>
-
-    <!-- Service: Randonnée guidée -->
-    <div class="bg-white rounded-2xl shadow-lg p-6 flex items-center justify-between">
-      <div>
-        <h3 class="text-xl font-semibold text-gray-800">Randonnée guidée</h3>
-        <p class="text-sm text-gray-500">Randonnée guidée d'une demi-journée</p>
-        <p class="mt-1 text-green-600 font-bold">25€</p>
-      </div>
-      <div class="flex items-center space-x-3">
-        <input type="checkbox" id="rando" class="h-5 w-5 text-green-600 accent-green-700" checked>
-        <button class="px-3 py-1 bg-gray-200 rounded-full text-lg font-bold hover:bg-gray-300 transition" onclick="decrease('randoQty')">-</button>
-        <span id="randoQty" class="w-6 text-center">2</span>
-        <button class="px-3 py-1 bg-gray-200 rounded-full text-lg font-bold hover:bg-gray-300 transition" onclick="increase('randoQty')">+</button>
-      </div>
-    </div>
-
-    <!-- Service: Petit-déjeuner -->
-    <div class="bg-white rounded-2xl shadow-lg p-6 flex items-center justify-between">
-      <div>
-        <h3 class="text-xl font-semibold text-gray-800">Petit-déjeuner continental</h3>
-        <p class="text-sm text-gray-500">Prix par personne</p>
-        <p class="mt-1 text-green-600 font-bold">12€</p>
-      </div>
-      <div class="flex items-center space-x-3">
-        <input type="checkbox" id="dej" class="h-5 w-5 text-green-600 accent-green-700" checked>
-        <button class="px-3 py-1 bg-gray-200 rounded-full text-lg font-bold hover:bg-gray-300 transition" onclick="decrease('dejQty')">-</button>
-        <span id="dejQty" class="w-6 text-center">2</span>
-        <button class="px-3 py-1 bg-gray-200 rounded-full text-lg font-bold hover:bg-gray-300 transition" onclick="increase('dejQty')">+</button>
+    
+      <!-- Check et Quantité -->
+      <div class="flex flex-col items-center space-y-2">
+        <input type="checkbox" id="velo" 
+             onchange="document.getElementById('veloQtyBox').style.display = this.checked ? 'flex' : 'none';" 
+             class="h-5 w-5 text-green-600">
+      
+        <!-- Boîte de quantité visible uniquement si checké -->
+        <div id="veloQtyBox" style="display: none;" class="flex items-center space-x-2 mt-1">
+          <button onclick="decrease('veloQty')" 
+                class="w-8 h-8 rounded-full bg-gray-200 hover:bg-red-300 text-lg font-bold flex items-center justify-center">-</button>
+        
+          <span id="veloQty" class="w-6 text-center font-semibold">1</span>
+        
+          <button onclick="increase('veloQty')" 
+                class="w-8 h-8 rounded-full bg-gray-200 hover:bg-green-300 text-lg font-bold flex items-center justify-center">+</button>
+        </div>
       </div>
     </div>
   </div>
+
+
+
+     <!-- Randonnée guidée -->
+  <div class="border rounded-lg p-4">
+    <div class="flex items-center justify-between">
+      <div>
+        <h3 class="font-semibold text-lg">Randonnée guidée</h3>
+        <p class="text-sm text-gray-500">Randonnée guidée d'une demi-journée</p>
+        <p class="mt-1 font-bold text-green-700">25€</p>
+      </div>
+      <div class="flex flex-col items-center space-y-2">
+        <input type="checkbox" id="rando"
+               onchange="document.getElementById('randoQtyBox').style.display = this.checked ? 'flex' : 'none';"
+               class="h-5 w-5 text-green-600">
+        <div id="randoQtyBox" style="display: none;" class="flex items-center space-x-2 mt-1">
+          <button onclick="decrease('randoQty')" class="w-8 h-8 rounded-full bg-gray-200 hover:bg-red-300 text-lg font-bold flex items-center justify-center">-</button>
+          <span id="randoQty" class="w-6 text-center font-semibold">1</span>
+          <button onclick="increase('randoQty')" class="w-8 h-8 rounded-full bg-gray-200 hover:bg-green-300 text-lg font-bold flex items-center justify-center">+</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Petit-déjeuner continental -->
+  <div class="border rounded-lg p-4">
+    <div class="flex items-center justify-between">
+      <div>
+        <h3 class="font-semibold text-lg">Petit-déjeuner continental</h3>
+        <p class="text-sm text-gray-500">Prix par personne</p>
+        <p class="mt-1 font-bold text-green-700">12€</p>
+      </div>
+      <div class="flex flex-col items-center space-y-2">
+        <input type="checkbox" id="dej"
+               onchange="document.getElementById('dejQtyBox').style.display = this.checked ? 'flex' : 'none';"
+               class="h-5 w-5 text-green-600">
+        <div id="dejQtyBox" style="display: none;" class="flex items-center space-x-2 mt-1">
+          <button onclick="decrease('dejQty')" class="w-8 h-8 rounded-full bg-gray-200 hover:bg-red-300 text-lg font-bold flex items-center justify-center">-</button>
+          <span id="dejQty" class="w-6 text-center font-semibold">1</span>
+          <button onclick="increase('dejQty')" class="w-8 h-8 rounded-full bg-gray-200 hover:bg-green-300 text-lg font-bold flex items-center justify-center">+</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
 
   <!-- Navigation -->
   <div class="flex justify-between mt-10 max-w-3xl mx-auto">
@@ -281,8 +309,111 @@
   </div>
 </section>
 
+<!-- Étape 4: Récapitulatif et paiement -->
+<section id="step-4" class="hidden p-6" data-aos="fade-up">
+  <h2 class="text-2xl font-bold mb-6">Récapitulatif et paiement</h2>
+
+  <div class="grid md:grid-cols-3 gap-6">
+    <!-- Colonne de gauche -->
+    <div class="md:col-span-2 space-y-6">
+      <!-- Détails de la réservation -->
+      <div class="border rounded-xl p-6 shadow-sm">
+        <h3 class="font-semibold text-lg mb-4">Détails de la réservation</h3>
+        <div class="text-sm text-gray-700 space-y-2">
+          <div class="flex justify-between">
+            <span class="text-gray-500">Dates</span>
+            <span>9 avr. 2025 - 12 avr. 2025</span>
+          </div>
+          <div class="flex justify-between">
+            <span class="text-gray-500">Durée</span>
+            <span>3 nuits</span>
+          </div>
+          <div class="flex justify-between">
+            <span class="text-gray-500">Invités</span>
+            <span>2 personnes</span>
+          </div>
+          <div class="flex justify-between">
+            <span class="text-gray-500">Hébergement</span>
+            <span>Chalet Panorama</span>
+          </div>
+          <hr class="my-2">
+          <div class="flex justify-between font-bold">
+            <span>Total</span>
+            <span class="text-green-700">360€</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Méthode de paiement -->
+      <div class="border rounded-xl p-6 shadow-sm">
+        <h3 class="font-semibold text-lg mb-4">Méthode de paiement</h3>
+
+        <div class="space-y-4 text-sm">
+          <label class="flex items-start gap-3 border p-4 rounded-lg cursor-pointer">
+            <input type="radio" name="paiement" class="mt-1 accent-blue-700" checked>
+            <div>
+              <p class="font-medium">Carte bancaire</p>
+              <p class="text-gray-500">Paiement sécurisé par carte</p>
+            </div>
+          </label>
+          <label class="flex items-start gap-3 border p-4 rounded-lg cursor-pointer">
+            <input type="radio" name="paiement" class="mt-1 accent-blue-700">
+            <div>
+              <p class="font-medium">Virement bancaire</p>
+              <p class="text-gray-500">Les détails vous seront envoyés par email</p>
+            </div>
+          </label>
+
+          <label class="flex items-start gap-3 mt-4">
+            <input type="checkbox" class="mt-1 accent-blue-700" required>
+            <p>J'accepte les <a href="#" class="text-green-700 underline">conditions d'utilisation</a> et la <a href="#" class="text-green-700 underline">politique de confidentialité</a></p>
+          </label>
+        </div>
+      </div>
+    </div>
+
+    <!-- Colonne de droite -->
+    <div class="border rounded-xl p-6 shadow-sm h-fit">
+      <h3 class="font-semibold text-lg mb-4">Résumé</h3>
+      <div class="text-sm text-gray-700 space-y-2">
+        <div class="flex justify-between">
+          <span>Hébergement</span>
+          <span>360€</span>
+        </div>
+        <hr class="my-2">
+        <div class="flex justify-between font-bold text-lg">
+          <span>Total</span>
+          <span class="text-green-700">360€</span>
+        </div>
+        <button class="border border-black text-black px-6 py-3 rounded-lg hover:bg-black hover:text-white transition">Réserver maintenant</button>
+        <p class="text-xs text-center text-gray-500 mt-2">Votre réservation sera confirmée après validation du paiement</p>
+      </div>
+    </div>
+  </div>
+
+ <!-- Navigation -->
+ <div class="flex justify-between mt-10">
+    <button onclick="goToStep(3)" class="border border-black text-black px-6 py-3 rounded-lg hover:bg-black hover:text-white transition">
+        Retour
+    </button>
+    <button class="border border-black text-black px-6 py-3 rounded-lg hover:bg-black hover:text-white transition">
+    Confirmer et payer
+    </button>
+  </div>
+
+  <!-- PIED : lien aide -->
+<div class="flex justify-between items-center pt-8 border-t mt-10">
+    <div class="text-sm text-gray-600">
+      Besoin d'aide ?
+      <a href="https://www.facebook.com/thedreamerwildandfree" class="ml-1 text-black hover:underline">Contactez-nous</a>
+    </div>
+  </div>
 
 </section>
+</section>
+
+
+
 
 
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
